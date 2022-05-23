@@ -1,0 +1,38 @@
+﻿@model Order
+    <div>
+        <h1>Оформление заказа</h1>
+        <div>
+            <form asp-area="" asp-controller="Order" asp-action="Checkout" method="post">
+                <div asp-validation-summary="All"></div>
+                <div>
+                    <label asp-for="Name">Имя</label>
+                    <input asp-for="Name" />
+                    <span asp-validation-for="Name"></span>
+                </div>
+                <div>
+                    <label asp-for="Surname">Фамилия</label>
+                    <input asp-for="Surname" />
+                    <span asp-validation-for="Surname"></span>
+                </div>
+                <div>
+                    <label asp-for="Adress">Адресс</label>
+                    <input asp-for="Adress" />
+                    <span asp-validation-for="Adress"></span>
+                </div>
+                <div>
+                    <label asp-for="Phone">Номер телефона</label>
+                    <input asp-for="Phone" />
+                    <span asp-validation-for="Phone"></span>
+                </div>
+                <div>
+                    <label asp-for="Mail">Почта</label>
+                    <input asp-for="Mail" />
+                    <span asp-validation-for="Mail"></span>
+                </div>
+                <br />
+                <div>
+                    <input type="submit" value="Завершить заказ" />
+                </div>
+            </form>
+        </div>
+    </div>

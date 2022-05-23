@@ -1,0 +1,36 @@
+﻿
+<section id="header">
+    <div class="container" style="padding-bottom: 0px; padding-top: 145px;">
+
+        <!-- Logo -->
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li><a asp-area="" asp-controller="Home" asp-action="Index"><span>Главная</span></a></li>
+                <li>
+                    <a href="#" class="icon fa-chart-bar"><span>Украшения</span></a>
+                    <ul>
+                        <li><a asp-area="" asp-controller="Jewelery" asp-action="Category" asp-route-category="Кольцо">Кольца</a></li>
+                        <li><a asp-area="" asp-controller="Jewelery" asp-action="Category" asp-route-category="Серьги">Серьги</a></li>
+                        <li><a asp-area="" asp-controller="Jewelery" asp-action="Category" asp-route-category="Цепочка">Цепочки</a></li>
+                        <li><a asp-area="" asp-controller="Jewelery" asp-action="Category" asp-route-category="Кулон">Кулоны</a></li>
+                        <li><a asp-area="" asp-controller="Jewelery" asp-action="Category" asp-route-category="Браслет">Браслеты</a></li>
+                        <li>
+                            <a href="#">Украшения для пирсинга</a>
+                            <ul>
+                                <li><a asp-area="" asp-controller="Jewelery" asp-action="Category" asp-route-category="Септум">Септум</a></li>
+                                <li><a asp-area="" asp-controller="Jewelery" asp-action="Category" asp-route-category="Плаги">Плаги</a></li>
+                                <li><a asp-area="" asp-controller="Jewelery" asp-action="Category" asp-route-category="Микродермал">Микродермалы</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li style="display: inline-block;"><h1 id="logo"><a asp-area="" asp-controller="Home" asp-action="Index">@Config.CompanyName</a></h1></li>
+                <li style="display: inline-block;"><a asp-area="" asp-controller="Home" asp-action="Contacts"><span>Контакты</span></a></li>
+                <li style="display: inline-block;"><a asp-area="" asp-controller="ShopCart" asp-action="Index"><span>Корзина</span></a></li>
+            </ul>
+        </nav>
+
+    </div>
+</section>

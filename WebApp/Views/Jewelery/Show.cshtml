@@ -1,0 +1,24 @@
+﻿@model Jewelery
+@{
+    ViewBag.Title = Model.MetaTitle;
+    ViewBag.Description = Model.MetaDescription;
+    ViewBag.Keywords = Model.MetaKeywords;
+}
+<div id="content" class="col-8 col-12-medium">
+    <div>
+        <h2>
+            @Model.Name
+        </h2>
+        <h2>
+            @Model.ShortDesc
+        </h2>
+        <div>
+            <img class="img-block" src="~/images/@Model.Image" style="height:150px;" />
+        </div>
+    </div>
+    <div>
+        @Html.Raw(Model.LongDesc)
+    </div>
+
+    <div><p><a asp-controller="ShopCart" asp-action="addToCart" asp-route-id="@Model.Id">Добавить в корзину</a></p></div>
+</div>

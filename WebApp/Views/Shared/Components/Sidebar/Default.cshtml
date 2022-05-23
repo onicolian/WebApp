@@ -1,0 +1,29 @@
+﻿@model IQueryable<Jewelery>
+
+@if (Model?.Any() == true)
+{
+    <section>
+        <h2>Популярные товары</h2>
+        <ul class="small-image-list">
+            @foreach (Jewelery entity in Model)
+            {
+                if (entity.IsFavorite == true)
+                {
+                    <li>
+                        <a asp-area="" asp-controller="Jewelery" asp-action="Index" asp-route-id="@entity.Id">
+                            <img src="~/images/@entity.Image" alt="" class="left" style="height:150px;" />
+                        </a>
+                        <h4>
+                            @entity.Name
+                        </h4>
+                        <p>
+                            @entity.ShortDesc
+                        </p>
+                    </li>
+
+                }
+
+            }
+        </ul>
+    </section>
+}

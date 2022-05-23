@@ -1,0 +1,17 @@
+﻿@model TextField
+@{
+    ViewBag.Title = Model.MetaTitle;
+    ViewBag.Description = Model.MetaDescription;
+    ViewBag.Keywords = Model.MetaKeywords;
+}
+
+<div id="content" class="col-8 col-12-medium">
+    <div>
+        @Html.Raw(Model.LongDesc)
+    </div>
+</div>
+<div id="sidebar" class="col-4 col-12-medium">
+    <cache>
+        @(await Component.InvokeAsync<SidebarViewComponent>(false))
+    </cache>
+</div>

@@ -1,0 +1,25 @@
+﻿@*@model  IQueryable<OrderDetail>
+
+<section>
+    <h2>Ваша корзина</h2>
+    <ul class="small-image-list">
+        @foreach (var entity in Model)
+        {
+            @if (entity == id)
+            {
+                <li>
+                    <h4>
+                        @entity.Jewelery.Name
+                    </h4>
+                    <div>
+                        <img class="img-block" src="~/images/@entity.Jewelery.Image" style="height:150px;" />
+                    </div>
+                    <p>
+                        @entity.Jewelery.Price.ToString()
+                    </p>
+                </li>
+            }
+        }
+    </ul>
+    <a asp-area="" asp-controller="Order" asp-action="Checkout">Оплатить</a>
+</sec*@tion>

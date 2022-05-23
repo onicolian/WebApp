@@ -1,0 +1,32 @@
+﻿@model IQueryable<Jewelery>
+@{
+    TextField textField = ViewBag.TextField;
+
+    ViewBag.Title = textField.MetaTitle;
+    ViewBag.Description = textField.MetaDescription;
+    ViewBag.Keywords = textField.MetaKeywords;
+}
+<div id="content" class="col-8 col-12-medium">
+    <div>
+        @if (Model.Any())
+        {
+        <ul class="big-image-list">
+            @foreach (Jewelery entity in Model)
+            {
+            <li>
+                <a asp-area="" asp-controller="Jewelery" asp-action="Index" asp-route-id="@entity.Id">
+                    <img src="~/images/@entity.Image" alt="" class="left" style="height:150px;" />
+                </a>
+                <h4><a asp-area="" asp-controller="Jewelery" asp-action="Index" asp-route-id="@entity.Id">@entity.Name</a></h4>
+                <p>@entity.ShortDesc</p>
+            </li>
+            }
+        </ul>
+        }
+    </div>
+</div>
+<div id="sidebar" class="col-4 col-12-medium">
+    <cache>
+        @(await Component.InvokeAsync<SidebarViewComponent>(true))
+    </cache>
+</div>
